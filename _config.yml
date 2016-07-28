@@ -4,7 +4,7 @@ disqus_shortname: hacker
 reading_time:     true
 words_per_minute: 200
 #Your site's domain goes here. Leave localhost server or blank when working locally.
-url:              http://www.cnblogs.com/qianduanjingying/
+url:              http://xiangliang.cn/
 
 # Owner/author information
 owner:
@@ -40,7 +40,7 @@ links:
 #  - title: Theme Setup
 #    url: /theme-setup
   - title: Works
-    url: http://www.hacke2.cn/works
+    url: http://xiangliang.cn/works
     external: true
 #  - title: GitHub
 #    url: https://github.com/hacke2
