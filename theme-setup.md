@@ -36,19 +36,19 @@ General notes and suggestions for customizing **HPSTR**.
 3. Set the following variables in your `config.yml` file:
 
 {% highlight yaml %}
-title:            hacke2's blog
+title:            hacker's blog
 description:      Describe your website here.
 disqus_shortname: shortname
 # Your site's domain goes here. When working locally use localhost server leave blank
 # PS. If you set this wrong stylesheets and scripts won't load and most links will break.
 # PPS. If you leave it blank for local testing home links won't work, they'll be fine for live domains though.
-url:             http://hacke2.github.io
+url:             http://zengxiangliang.github.io
 
 # Owner/author information
 owner:
-  name:           王兴龙
+  name:           曾祥良
   avatar:         avatar.jpg
-  bio:            "Hi 大家好，我是hacke2，感谢您来逛我的空间，也希望你能关注他，前端之路，一起前行."
+  bio:            "Hi 大家好，我是hacker，感谢您来逛我的空间，也希望你能关注他，前端之路，一起前行."
   email:          hacke2@qq.com
   # Social networking links used in footer. Update and remove as you like.
   twitter:        
