@@ -49,7 +49,7 @@ owner:
   name:           曾祥良
   avatar:         avatar.jpg
   bio:            "Hi 大家好，我是hacker，感谢您来逛我的空间，也希望你能关注他，前端之路，一起前行."
-  email:          hacke2@qq.com
+  email:          1048956673@qq.com
   # Social networking links used in footer. Update and remove as you like.
   twitter:        
   facebook:       
