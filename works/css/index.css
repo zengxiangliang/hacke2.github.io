@@ -1,0 +1,39 @@
+/*
+* @Author: Administrator
+* @Date:   2016-07-31 01:15:42
+* @Last Modified by:   Administrator
+* @Last Modified time: 2016-07-31 01:46:32
+*/
+.mainview{
+	width:90%;
+	margin:0 auto;
+}
+.mainview ul{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.mainview li{
+	margin:5px;
+	height:45px;
+	min-width: 30%;
+	border:1px solid #fff;
+	border-radius: 5px;
+	flex:1;
+	text-indent: 1em;
+	font-size: 18px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.mainview li a{
+	display: block;
+	line-height: 45px;
+	height:100%;
+	background-color: #ccc;
+	color:#555;
+}
+.mainview li a:hover{
+	color:#ccc;
+	background-color: #555;
+}
