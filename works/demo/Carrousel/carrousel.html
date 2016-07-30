@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        旋转木马
+    </title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        overflow: hidden;
+        background-color: #ccc;
+    }
+    
+    .stage {
+        -moz-perspective: 10rem;
+        -ms-perspective: 10rem;
+        -webkit-perspective: 10rem;
+        perspective: 10rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 3rem;
+        height: 2rem;
+        margin-left: -1.5rem;
+        margin-top: -1rem;
+    }
+    .box {
+        width: 100%;
+        height: 100%;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -moz-transition: -moz-transform .4s;
+        -ms-transition: -ms-transform .4s;
+        -webkit-transition: -webkit-transform .4s;
+        transition: transform .4s;
+    }
+    .box li {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        list-style: none;
+        font-size: 40px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .box li img{
+        width: 100%;
+        height: 100%;
+    }
+    .pagination{
+        display: flex;
+        display: -webkit-flex;
+        justify-content: center;
+        -webkit-justify-content: center;
+        align-items: center;
+        -webkit-align-items: center;
+        height:0.06rem;
+        position: relative;
+        top:0.6rem;
+    }
+    .pagination li{
+        width:0.55rem;
+        height:100%;
+        margin:0 0.04rem;
+        background-color: #222;
+        list-style: none;
+        -moz-transition:background-color .3s;
+        -ms-transition:background-color .3s;
+        -webkit-transition:background-color .3s;
+        transition:background-color .3s;
+    }
+    .pagination li.active{
+        background-color: #169eff;
+    }
+    </style>
+    </meta>
+</head>
+
+<body>
+    <div class="stage">
+        <ul class="box">
+            <li class="items">
+                <img src="img/1.jpg" ondragstart="return false" alt="">
+            </li>
+            <li class="items">
+                <img src="img/2.jpg" ondragstart="return false" alt="">
+            </li>
+            <li class="items">
+                <img src="img/3.jpg" ondragstart="return false" alt="">
+            </li>
+            <li class="items">
+                <img src="img/4.jpg" ondragstart="return false" alt="">
+            </li>
+            <li class="items">
+                <img src="img/5.jpg" ondragstart="return false" alt="">
+            </li>
+            <li class="items">
+                <img src="img/6.jpg" ondragstart="return false" alt="">
+            </li>
+        </ul>
+        <ul class="pagination"></ul>
+    </div>
+    <script type="text/javascript" src="carrousel.js"></script>
+    <script type="text/javascript">
+    ;(function() {
+        var script = document.createElement('script');
+        script.onload = function() {
+            var stats = new Stats();
+            document.body.appendChild(stats.dom);
+            requestAnimationFrame(function loop() {
+                stats.update();
+                requestAnimationFrame(loop)
+            });
+        };
+        script.src = '//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';
+        document.head.appendChild(script);
+    })()
+
+    function resizeEvt() {
+        var ww = document.documentElement.clientWidth;
+        var fontSize = ww / 750 * 100;
+        document.documentElement.style.fontSize = fontSize + 'px'
+    }
+    document.addEventListener('DOMContentLoaded', resizeEvt, false);
+    window.addEventListener('resize', resizeEvt, false);
+    document.addEventListener('touchmove',function(e){
+        e.preventDefault();
+    },false)
+    new Carrousel({
+        pagination:'.pagination',
+        isLoop:true
+    });
+    </script>
+</body>
+
+</html>
