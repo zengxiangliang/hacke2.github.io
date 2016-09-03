@@ -2,11 +2,11 @@
 * @Author: Administrator
 * @Date:   2016-09-01 21:46:58
 * @Last Modified by:   Administrator
-* @Last Modified time: 2016-09-03 13:04:20
+* @Last Modified time: 2016-09-03 13:11:50
 */
 
 'use strict';
-var page = document.querySelectorAll('.page'),wrap = document.querySelector('.wrap'),x1,y1,x2,y2,d,index = 0,len = page.length;
+var page = document.querySelectorAll('.page'),wrap = document.querySelector('.wrap'),x1,y1,x2,y2,d,index = 0,len = page.length,isAnimate = false;
 window.addEventListener('load',init,false);
 document.addEventListener('touchstart',start,false);
 document.addEventListener('touchmove',move,false);
@@ -25,9 +25,9 @@ function move(e){
 	
 }
 function end(e){
-	if(d<=-100&&index<len-1){
+	if(d<=-100&&index<len-1&&!isAnimate){
 		index++;
-	}else if(d>=100&&index>0){
+	}else if(d>=100&&index>0&&!isAnimate){
 		index--;
 	}else{
 		return;
@@ -36,6 +36,7 @@ function end(e){
 	page[index].style.left = 0;
 	page[index].style.top = index*100+'%';
 	wrap.style.webkitTransform = wrap.style.transform = 'translate3d(0,'+(-index*100)+'%,0)';
+	isAnimate = true;
 }
 function transitionEnd(){
 	for(var i = 0;i<len;i++){
@@ -44,7 +45,7 @@ function transitionEnd(){
 		}
 		page[i].style.display = 'none';
 	}
-	console.log(11);
+	isAnimate = false;
 }
 function init(){
 	page[0].style.display='block';
