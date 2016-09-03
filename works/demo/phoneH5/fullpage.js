@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2016-09-01 21:46:58
 * @Last Modified by:   Administrator
-* @Last Modified time: 2016-09-03 12:54:07
+* @Last Modified time: 2016-09-03 13:04:20
 */
 
 'use strict';
@@ -35,7 +35,7 @@ function end(e){
 	page[index].style.display = 'block';
 	page[index].style.left = 0;
 	page[index].style.top = index*100+'%';
-	wrap.style.transform = wrap.style.webkitTransform = 'translate3d(0,'+(-index*100)+'%,0)';
+	wrap.style.webkitTransform = wrap.style.transform = 'translate3d(0,'+(-index*100)+'%,0)';
 }
 function transitionEnd(){
 	for(var i = 0;i<len;i++){
