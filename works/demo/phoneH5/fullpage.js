@@ -2,10 +2,9 @@
 * @Author: Administrator
 * @Date:   2016-09-01 21:46:58
 * @Last Modified by:   Administrator
-* @Last Modified time: 2016-09-03 13:11:50
+* @Last Modified time: 2016-09-03 13:18:08
 */
 
-'use strict';
 var page = document.querySelectorAll('.page'),wrap = document.querySelector('.wrap'),x1,y1,x2,y2,d,index = 0,len = page.length,isAnimate = false;
 window.addEventListener('load',init,false);
 document.addEventListener('touchstart',start,false);
