@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2016-09-01 21:46:58
 * @Last Modified by:   Administrator
-* @Last Modified time: 2016-09-03 13:18:08
+* @Last Modified time: 2016-09-03 13:41:11
 */
 
 var page = document.querySelectorAll('.page'),wrap = document.querySelector('.wrap'),x1,y1,x2,y2,d,index = 0,len = page.length,isAnimate = false;
@@ -34,7 +34,7 @@ function end(e){
 	page[index].style.display = 'block';
 	page[index].style.left = 0;
 	page[index].style.top = index*100+'%';
-	wrap.style.webkitTransform = wrap.style.transform = 'translate3d(0,'+(-index*100)+'%,0)';
+	wrap.style.webkitTransform = 'translate3d(0,'+(-index*100)+'%,0)';
 	isAnimate = true;
 }
 function transitionEnd(){
