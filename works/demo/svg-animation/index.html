@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>svg animation</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  
+<!-- by 泱泱
+动态描边效果 每段路径动画完成的时间分别设置
+-->
+
+
+
+
+<svg  xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"  width="1000" height="1000">
+
+ 
+
+
+<!-- AI中选择文档信息面板，对象，选中路径可以查看路径长度-->
+
+<g class="border">
+<polyline fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#5AC5C1" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		200,200 100,200 100,400 500,400 500,200 200,200 	"/> <!-- 路径长度1200-->
+</g>
+
+ <g class="keyboard"><!-- 路径长度160 即每个小键盘格的路径长度-->
+<polyline fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#5AC5C1" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		180,224 140,224 140,264 180,264 180,224 	"/>
+<polyline fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#5AC5C1" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		250,224 210,224 210,264 250,264 250,224 	"/>
+<polyline fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#5AC5C1" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		320,224 280,224 280,264 320,264 320,224 	"/>
+<polyline fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#5AC5C1" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		390,224 350,224 350,264 390,264 390,224 	"/>
+<polyline fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#5AC5C1" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		180,284 140,284 140,324 180,324 180,284 	"/>
+<polyline fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#5AC5C1" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		250,284 210,284 210,324 250,324 250,284 	"/>
+<polyline fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#5AC5C1" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		320,284 280,284 280,324 320,324 320,284 	"/>
+</g>
+<g class="enter"><!-- 路径长度420 -->
+<polyline fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#F2856B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		420,224 460,224 460,324 350,324 350,284 420,284 420,224 	"/><!-- 锚点的走向决定最终动画的的方向，此处让enter键实现顺时针向动画 -->
+</g>
+<g class="space"><!-- 路径长度696 -->
+<polyline fill="none" stroke="#82D8D5" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		460,348 140,348 140,376 460,376 460,348 	"/>
+</g>
+<g class="line"><!-- 路径长度333-->
+	<path fill="none" stroke="#FFBB4D" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M187.3,192c0,0,29.3-43.3,76-46S372,167.3,405,112.7S424.7,30,424.7,30"/>
+</g>
+
+</svg>
+  
+  
+</body>
+</html>

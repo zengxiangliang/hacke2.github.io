@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2016-09-01 21:46:58
 * @Last Modified by:   Administrator
-* @Last Modified time: 2016-09-03 14:03:03
+* @Last Modified time: 2016-09-03 16:18:50
 */
 
 var page = document.querySelectorAll('.page'),wrap = document.querySelector('.wrap'),x1,y1,x2,y2,d,index = 0,len = page.length,isAnimate = false;
@@ -12,29 +12,22 @@ document.addEventListener('touchmove',move,false);
 document.addEventListener('touchend',end,false);
 wrap.addEventListener('webkitTransitionEnd',transitionEnd,false);
 function start(e){
-	var e = e.changedTouches[0];
-	x1 = e.pageX;
-	y1 = e.pageY;
-}
-function move(e){
-	var e = e.changedTouches[0];
-	x2 = e.pageX;
-	y2 = e.pageY;
-	d = y2-y1;
+	y1 = e.changedTouches[0].pageY;
 	
 }
+function move(e){
+	y2 = e.changedTouches[0].pageY;
+}
 function end(e){
-	if(d<=-100&&index<len-1&&!isAnimate){
+	d = y2-y1;
+	if(d<=100&&index<len-1&&!isAnimate){
 		index++;
 	}else if(d>=100&&index>0&&!isAnimate){
 		index--;
 	}else{
-		return;
+		return;	
 	}
-	alert(1);
 	page[index].style.display = 'block';
-	page[index].style.left = 0;
-	page[index].style.top = index*100+'%';
 	wrap.style.webkitTransform = 'translate3d(0,'+(-index*100)+'%,0)';
 	isAnimate = true;
 }
@@ -43,12 +36,17 @@ function transitionEnd(){
 		if(i==index){
 			continue;
 		}
-		page[i].style.display = 'none';
+		if(page[i].style.display === 'block'){
+			page[i].style.display = 'none';
+		}
 	}
 	isAnimate = false;
 }
 function init(){
 	page[0].style.display='block';
+	for(var i = 0;i<len;i++){
+		page[i].style.top = i*100+'%';
+	}
 }
 function hasX(){
 	return wrap.getAttribute('x')||wrap.getAttribute('x') == '';

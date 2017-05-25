@@ -1,0 +1,41 @@
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}/* 固定动画设定，不用修改 */
+
+.border{
+stroke-dasharray: 1200;
+stroke-dashoffset: 1200; 
+animation: dash 1.5s linear forwards;/* 设定键盘外轮廓border的动画时间为1.5s */
+}
+
+.keyboard{
+stroke-dasharray: 160;
+stroke-dashoffset: 160;
+animation: dash 1s linear forwards; /* 设定每个小按键的动画时间为1s，且同步*/ 
+animation-delay:1.5s; /* 设定动画延迟开始的时间为border的动画时间，以确保动画的连续性，但一定要把animation-delay的设定放到animation之后*/  
+}
+
+.enter{
+stroke-dasharray: 420;
+stroke-dashoffset:420;
+animation: dash 1.5s linear forwards;
+animation-delay:2.5s; /* 延迟开始时间=上个动画的延迟开始时间+上个动画的持续时间*/  
+}
+
+.space{
+stroke-dasharray: 700;
+stroke-dashoffset:700;
+animation: dash 1s linear forwards;
+  animation-delay:4s;
+}
+
+.line{
+stroke-dasharray: 340;
+stroke-dashoffset:340;
+animation: dash 1s linear forwards;
+animation-delay:5s;
+}
+
