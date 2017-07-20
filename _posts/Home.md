@@ -1,3 +1,13 @@
+---
+layout: post
+title: UI-ROUTER
+description: "UI-ROUTER"
+tags: [读书笔记]
+image:
+  background: witewall_3.png
+comments: true
+share: true
+---
 [[Next (Nested States & Nested Views) ►|Nested States and Nested Views]]
 
 ##### This In-Depth Guide will take you through all aspects of the UI-Router and its components and options. If you just need a quick reference guide visit the [API Reference](http://angular-ui.github.io/ui-router/site)
