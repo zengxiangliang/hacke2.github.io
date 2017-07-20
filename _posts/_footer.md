@@ -1,0 +1,1 @@
+Use the table of contents to the top right to navigate to other wiki sections!

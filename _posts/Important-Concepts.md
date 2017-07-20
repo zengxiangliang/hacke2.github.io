@@ -1,0 +1,7 @@
+The primary abstraction provided is that of a UI **states** that form a _Hierarchical State Machine_. Informally, a state corresponds to a place in the overall application UI, and navigating through the application means moving ("transitioning" in state machine lingo) between different states.
+
+A state can define one or more **views** that define the application UI for that state. A view definition specifies a template and associated controller (optional) to load into a corresponding **ui-view** directive, as well as dependencies to resolve and inject into the controller (also optional).
+
+In the simplest case, the top-level HTML of the application will contain a single ```ui-view``` directive, and each state will define what to load into that directive when the application is in that state. However, a single view driven by a flat list of states is not enough for even moderately complex applications. The real power of these concepts comes from allowing views and states to be _nested_ to form a _hierarchy_: The template loaded into a ```ui-view``` by a state can itself contain further ```ui-view``` directives that are then populated by **child states**.
+
+[[◄ Back (Goals)|Home]] `      ` [[Next (The Components) ►|The Components]]

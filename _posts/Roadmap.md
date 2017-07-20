@@ -1,0 +1,17 @@
+## Where is this project headed?
+
+The goal is to be the de facto solution for application routing and state management. Eventually convincing the angular core team to merge UI-Router into Angular core would be a nice-to-have (perhaps 2.0?). The Angular team has expressed interest. 
+
+### Here are some of the larger items that the ui-router team has on our roughly sketched out roadmap: 
+
+* **[COMPLETE]** Factor out/rewrite 'resolve' logic into a $resolve service that handles (1) inheritance from parent resolve(s) (2) dependencies within a single resolve
+* *[started]* Have a separate $view service for defining what goes into ui-view tags. Will support an async interface along the lines of ```$view.load('myview', { template: ..., controller: ..., resolve: ... })```, but will also need to support a synchronous interface that $state can use after having called $resolve itself (so that all views relating to a state can be updated atomically). One major conceptual difficulty is that the naming of nested views (how they get turned into "qualified" names) is fairly intrinsically linked to the state hierarchy.
+* parameter handling needs to be revisited, to support reload=false per parameter and two-way binding between $stateParams and $location for those.
+* **[COMPLETE]** nice things like $state.sref() and ui-sref directive for auto-generating link urls. Already in progress. ([See #139](https://github.com/angular-ui/ui-router/issues/139))
+* support for independent "components" (re-usable state tree branches) with their own states that can be instantiated multiple times in the global (or a parent component) state hierarchy ([See #123](https://github.com/angular-ui/ui-router/issues/123) and [See #95](https://github.com/angular-ui/ui-router/issues/95))
+* Orthogonal view routing. Two views who have sub-trees of their own, who's states are automatically serialized to the url. Strongly related to "components" idea above.
+* **[COMPLETE]** Add parameter sharing when transitioning from one state to another, so that any parameters that are shared between the two states will be defaulted from the current $stateParams (however this won't apply to parameters that are named the same "by coincidence" to avoid unintended behaviours).([See #167](https://github.com/angular-ui/ui-router/issues/167))
+* **[COMPLETE]** Make ui-view retain inner content as "no view" template. Already in progress. ([See #142](https://github.com/angular-ui/ui-router/issues/142))
+* scrollTo property for state configs. scrollTo: "top", null, @viewname, elementid. ([See #110](https://github.com/angular-ui/ui-router/issues/110))
+* implement $injector.bind() that binds injectable parameters via Function.prototype.bind and returns a plain function object, so that for callbacks like in $urlRouter or $state we don't have to either (1) use $injector.invoke() where 95% of use cases would prefer a simple callback with 1 parameter (which is also orders of magnitudes faster in performance critical code paths) or (2) force the 5% to contort their configuration logic into custom providers just so they can get at the necessary services they want to use inside the callbacks. I'm intending to do this one as a PR on core.
+* Add hooks to ui.state to promote and easily allow lazy-loading. ([See #146](https://github.com/angular-ui/ui-router/issues/146))
