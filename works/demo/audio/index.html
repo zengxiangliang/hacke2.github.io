@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <audio id="music1" src="music/bg/26600725.mp3" preload="auto" controls></audio>
+    <audio id="music2" src="music/bg/26797881.mp3" preload="auto" controls></audio>
+    <audio id="music3" src="music/bg/27267032_1_100.mp3" preload="auto" controls></audio>
+    <audio id="music4" src="music/bg/31005463.mp3" preload="auto" controls></audio>
+    <audio id="music5" src="music/bg/64124310.mp3" preload="auto" controls></audio>
+    <button>播放1</button>
+    <button>播放2</button>
+    <button>播放3</button>
+    <button>播放4</button>
+    <button>播放5</button>
+    <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.js"></script>
+    <script>
+        $('button').click(function(){
+            var index = $(this).index('button')+1;
+            var music = $('audio');
+            var $thisMusciStr = '#music'+index;
+            var $thisMusci = $($thisMusciStr);
+            music.not($thisMusciStr).each(function () {
+                this.pause();
+                this.currentTime = 0;
+            });
+            $thisMusci[0].play();
+        });
+    </script>
+</body>
+</html>

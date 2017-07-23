@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="audio-wrap" style="position: fixed">
+        <audio id="music1" src="music/bg/26600725.mp3" preload="auto" controls></audio>
+        <audio id="music2" src="music/bg/26797881.mp3" preload="auto" controls></audio>
+        <audio id="music3" src="music/bg/27267032_1_100.mp3" preload="auto" controls></audio>
+        <audio id="music4" src="music/bg/31005463.mp3" preload="auto" controls></audio>
+        <audio id="music5" src="music/bg/64124310.mp3" preload="auto" controls></audio>
+    </div>
+
+    <div style="background-color: #3aff36;height:600px"></div>
+    <div style="background-color: #ff4d48;height:600px"></div>
+    <div style="background-color: #6c65ff;height:600px"></div>
+    <div style="background-color: #ff15c9;height:600px"></div>
+    <div style="background-color: #17ff25;height:600px"></div>
+    <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.js"></script>
+    <script>
+        var isOk = [];
+        $(window).scroll(function () {
+            var scrollTop = $(this).scrollTop();
+            console.log(scrollTop);
+            if(scrollTop> 500 && !isOk[0]) {
+                swichMusic('#music1','.audio-wrap>audio');
+                isOk[0] = true;
+            }
+            if(scrollTop> 1000 && !isOk[1]) {
+                swichMusic('#music2','.audio-wrap>audio');
+                isOk[1] = true;
+            }
+            if(scrollTop> 1500 && !isOk[2]) {
+                swichMusic('#music3','.audio-wrap>audio');
+                isOk[2] = true;
+            }
+            if(scrollTop> 2000 && !isOk[3]) {
+                swichMusic('#music4','.audio-wrap>audio');
+                isOk[3] = true;
+            }
+        });
+        function swichMusic(curAudioStr,audioStr) {
+            var $audio = $(audioStr) || $('audio');
+            var $curAudio = $(curAudioStr);
+            if(!$curAudio) return;
+
+            $audio.not(curAudioStr).each(function () {
+                this.pause();
+            });
+            $curAudio[0].play();
+        }
+    </script>
+</body>
+</html>
